@@ -26,7 +26,7 @@ top_label.configure(font=("Open Sans", 24, "bold"))
 
 
 # create frame to display navigation
-frm_navigation = tk.Frame(root, relief=tk.RIDGE, bd=2)
+frm_navigation = tk.Frame(root, bd=2)
 frm_navigation.columnconfigure(0, weight=1)
 frm_navigation.rowconfigure(0, weight=1)
 frm_navigation.rowconfigure (1, weight=0)
@@ -50,25 +50,20 @@ important_message_label_text.pack(side=tk.LEFT, padx=(5,10), pady=10)
 
 frm_important_messages_label.grid(column=0, row=0, sticky="ew")
 
-#create the important messages to display
+# create the important messages to display
 frm_important_messages_to_display = tk.Frame(frm_important_messages, bg="white")
 
-# create a important message that is selected
-# frm_important_message_selected = tk.Frame(frm_important_messages_to_display,relief=tk.RIDGE, bd=2, bg="white")
-# important_message_selected_sender = tk.Label(frm_important_message_selected, text="Bob", bg="white")
-# important_message_selected_preview = tk.Label(frm_important_message_selected, text="It is a long established fact...", bg="white")
-# important_message_selected_sender.pack(side=tk.LEFT, expand=tk.TRUE)
-# important_message_selected_preview.pack(side=tk.LEFT, expand=tk.TRUE)
+# create a message to display
+frm_message = tk.Frame(frm_important_messages_to_display, highlightbackground="#AFCA0B", highlightthickness=2)
+message_sender = tk.Label(frm_message, text="test", anchor=tk.W, bg="white")
+message_sender.pack(side=tk.TOP, fill=tk.X)
 
-# create a important message that is not selected
-# frm_important_message = tk.Frame(frm_important_messages_to_display,relief=tk.RIDGE, bd=2, bg="white")
-# important_message_sender = tk.Label(frm_important_message_selected, text="Alice", bg="white")
-# important_message_preview = tk.Label(frm_important_message_selected, text="It is a long established fact...", bg="white")
-# important_message_sender.pack(side=tk.LEFT, expand=tk.TRUE)
-# important_message_preview.pack(side=tk.LEFT, expand=tk.TRUE)
+message_content_preview = tk.Label(frm_message, text="test2dcdceccdcdccd", anchor=tk.W, bg="white")
+message_content_preview.pack(side=tk.TOP, fill=tk.X)
 
-# frm_important_message_selected.pack(side=tk.LEFT, expand=tk.TRUE, padx=10, pady=10)
-# frm_important_message.pack(side=tk.LEFT, expand=tk.TRUE, padx=10, pady=10)
+
+
+frm_message.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
 
 frm_important_messages_to_display.grid(column=0, row=1, sticky="nsew")
 
@@ -84,14 +79,18 @@ btn_new_message.configure(font=("Open Sans", 12, "bold"))
 btn_new_message.pack(side=tk.LEFT, expand=tk.TRUE, fill=tk.BOTH, padx=(5,10), pady=10)
 
 
-# create frame for answering / sending messages
+# create for interacting with the message detail
+frm_detail_display = tk.Frame(root, bd=2, bg="blue")
 
 
 # create the gui
 top_label.grid(column=0, columnspan=2, row=0, sticky="ew")
+
 frm_navigation.grid(column=0, row=1, sticky="nsew")
 frm_important_messages.grid(column=0, row=0, sticky="nsew")
 frm_buttons.grid(column=0, row=1, sticky="ew")
+
+frm_detail_display.grid(column=1, row=1, sticky="nsew")
 
 # run the gui
 root.mainloop()
