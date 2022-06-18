@@ -26,7 +26,7 @@ top_label.configure(font=("Open Sans", 24, "bold"))
 
 
 # create frame to display navigation
-frm_navigation = tk.Frame(root, bd=2)
+frm_navigation = tk.Frame(root, relief=tk.RIDGE, bd=2)
 frm_navigation.columnconfigure(0, weight=1)
 frm_navigation.rowconfigure(0, weight=1)
 frm_navigation.rowconfigure (1, weight=0)
@@ -55,15 +55,37 @@ frm_important_messages_to_display = tk.Frame(frm_important_messages, bg="white")
 
 # create a message to display
 frm_message = tk.Frame(frm_important_messages_to_display, highlightbackground="#AFCA0B", highlightthickness=2)
-message_sender = tk.Label(frm_message, text="test", anchor=tk.W, bg="white")
+message_sender = tk.Label(frm_message, text="Thomas Müller", anchor=tk.W, bg="white")
+message_sender.configure(font=("Open Sans", 10, "bold"))
 message_sender.pack(side=tk.TOP, fill=tk.X)
 
-message_content_preview = tk.Label(frm_message, text="test2dcdceccdcdccd", anchor=tk.W, bg="white")
+message_content_preview = tk.Label(frm_message, text="Lorem ipsum...", anchor=tk.W, bg="white")
+message_content_preview.configure(font=("Open Sans", 10))
+message_content_preview.pack(side=tk.TOP, fill=tk.X)
+
+frm_message_2 = tk.Frame(frm_important_messages_to_display, highlightbackground="#131A1C", highlightthickness=2)
+message_sender = tk.Label(frm_message_2, text="Mats Hummels", anchor=tk.W, bg="white")
+message_sender.configure(font=("Open Sans", 10, "bold"))
+message_sender.pack(side=tk.TOP, fill=tk.X)
+
+message_content_preview = tk.Label(frm_message_2, text="Lorem ipsum...", anchor=tk.W, bg="white")
+message_content_preview.configure(font=("Open Sans", 10))
+message_content_preview.pack(side=tk.TOP, fill=tk.X)
+
+frm_message_3 = tk.Frame(frm_important_messages_to_display, highlightbackground="#131A1C", highlightthickness=2)
+message_sender = tk.Label(frm_message_3, text="Timo Werner", anchor=tk.W, bg="white")
+message_sender.configure(font=("Open Sans", 10, "bold"))
+message_sender.pack(side=tk.TOP, fill=tk.X)
+
+message_content_preview = tk.Label(frm_message_3, text="Lorem ipsum...", anchor=tk.W, bg="white")
+message_content_preview.configure(font=("Open Sans", 10))
 message_content_preview.pack(side=tk.TOP, fill=tk.X)
 
 
 
 frm_message.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
+frm_message_2.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
+frm_message_3.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
 
 frm_important_messages_to_display.grid(column=0, row=1, sticky="nsew")
 
@@ -80,7 +102,7 @@ btn_new_message.pack(side=tk.LEFT, expand=tk.TRUE, fill=tk.BOTH, padx=(5,10), pa
 
 
 # create for interacting with the message detail
-frm_detail_display = tk.Frame(root, bd=2, bg="blue")
+frm_detail_display = tk.Frame(root, relief=tk.RIDGE, bd=2, bg="white")
 
 
 # create the gui
