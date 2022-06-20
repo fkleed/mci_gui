@@ -30,11 +30,8 @@ if __name__ == "__main__":
     gui = Gui()
     
     # defining the components
-    top_label = TopLabel(gui).top_label
-    navigation = Navigation(gui).frm_navigation
+    top_label = TopLabel(gui)
+    navigation = Navigation(gui)
 
     # creating the gui
-    top_label.grid(column=0, columnspan=2, row=0, sticky="ew")
-    navigation.grid(column=0, row=1, sticky="nsew")
-
     gui.mainloop()
