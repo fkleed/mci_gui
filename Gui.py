@@ -6,29 +6,35 @@ from components.layout.TopLabel import TopLabel
 from components.navigation.Navigation import Navigation
 
 # create the root window and configure it
-root = tk.Tk()
-root.title("MCI Chat")
+class Gui(tk.Tk):
 
-window_width = 1200
-window_height = 600
-root.geometry(f'{window_width}x{window_height}')
+    def __init__(self):
+        super().__init__()
+    
+        self.title("MCI Chat")
 
-root.minsize(1200, 600)
-root.iconphoto(False, ImageTk.PhotoImage(file='./assets/images/favicon.png'))
-root.configure(bg="white")
+        window_width = 1200
+        window_height = 600
+        self.geometry(f'{window_width}x{window_height}')
 
-root.columnconfigure(0, weight=1)
-root.columnconfigure(1, weight=3)
-root.rowconfigure(0, weight=0)
-root.rowconfigure(1, weight=1)
+        self.minsize(1200, 600)
+        self.iconphoto(False, ImageTk.PhotoImage(file='./assets/images/favicon.png'))
+        self.configure(bg="white")
 
-# defining the components
-top_label = TopLabel(root).top_label
-navigation = Navigation(root).frm_navigation
+        self.columnconfigure(0, weight=1)
+        self.columnconfigure(1, weight=3)
+        self.rowconfigure(0, weight=0)
+        self.rowconfigure(1, weight=1)
 
-# creating the gui
-top_label.grid(column=0, columnspan=2, row=0, sticky="ew")
-navigation.grid(column=0, row=1, sticky="nsew")
+if __name__ == "__main__":
+    gui = Gui()
+    
+    # defining the components
+    top_label = TopLabel(gui).top_label
+    navigation = Navigation(gui).frm_navigation
 
+    # creating the gui
+    top_label.grid(column=0, columnspan=2, row=0, sticky="ew")
+    navigation.grid(column=0, row=1, sticky="nsew")
 
-root.mainloop()
+    gui.mainloop()

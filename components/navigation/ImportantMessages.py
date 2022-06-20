@@ -10,7 +10,7 @@ class ImportantMessages:
         self.frm_important_messages.rowconfigure(0, weight=0)
         self.frm_important_messages.rowconfigure(1, weight=1)
 
-        important_messages_label = ImportantMessagesLabel(self.frm_important_messages).frm_important_messages_label
+        important_messages_label = ImportantMessagesLabel(self.frm_important_messages, 3).frm_important_messages_label
         important_messages_to_display = ImportantMessagesToDisplay(self.frm_important_messages).frm_important_messages_to_display
 
         important_messages_label.grid(column=0, row=0, sticky="ew")
@@ -18,12 +18,12 @@ class ImportantMessages:
 
 class ImportantMessagesLabel:
 
-    def __init__(self, master):
+    def __init__(self, master, count):
         self.frm_important_messages_label = tk.Frame(master)
 
-        self.important_message_label_text = tk.Label(self.frm_important_messages_label, text="Imortant messages (3)")
-        self.important_message_label_text.configure(font=("Open Sans", 12, "bold"))
-        self.important_message_label_text.pack(side=tk.LEFT, padx=(10,10), pady=10)
+        self.important_messages_label_text = tk.Label(self.frm_important_messages_label, text="Imortant messages (" + str(count) + ")")
+        self.important_messages_label_text.configure(font=("Open Sans", 12, "bold"))
+        self.important_messages_label_text.pack(side=tk.LEFT, padx=(10,10), pady=10)
 
 class ImportantMessagesToDisplay:
 
