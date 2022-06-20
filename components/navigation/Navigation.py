@@ -16,12 +16,4 @@ class Navigation:
         self.all_messages = AllMessags(frm_navigation)
         self.important_messages = ImportantMessages(frm_navigation)
 
-        # navigation_buttons.grid(column=0, row=1, sticky="ew")
-        self.navigation_buttons.btn_all_messages["command"] = self.test
-
         frm_navigation.grid(column=0, row=1, sticky="nsew")
-
-    def test(self):
-        print("test")
-
-

@@ -29,9 +29,9 @@ class Gui(tk.Tk):
 if __name__ == "__main__":
     gui = Gui()
     
-    # defining the components
+    # define the components
     top_label = TopLabel(gui)
     navigation = Navigation(gui)
 
-    # creating the gui
+    # create the gui
     gui.mainloop()
