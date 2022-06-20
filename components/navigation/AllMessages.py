@@ -2,18 +2,18 @@ import tkinter as tk
 
 from components.navigation.MessagePreview import MessagePreview
 
-class AllMessags:
+class AllMessags(tk.Frame):
 
     def __init__(self, master):
-        frm_all_messages = tk.Frame(master)
-        frm_all_messages.columnconfigure(0, weight=1)
-        frm_all_messages.rowconfigure(0, weight=0)
-        frm_all_messages.rowconfigure(1, weight=1)
+        super().__init__(master)
+        self.columnconfigure(0, weight=1)
+        self.rowconfigure(0, weight=0)
+        self.rowconfigure(1, weight=1)
 
-        self.all_messages_label = AllMessagesLabel(frm_all_messages, 5)
-        self.all_messages_to_display = AllMessagesToDisplay(frm_all_messages)
+        self.all_messages_label = AllMessagesLabel(self, 5)
+        self.all_messages_to_display = AllMessagesToDisplay(self)
 
-        frm_all_messages.grid(column=0, row=0, sticky="nsew")
+        self.grid(column=0, row=0, sticky="nsew")
 
 class AllMessagesLabel:
 

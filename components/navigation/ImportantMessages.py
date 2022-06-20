@@ -2,18 +2,18 @@ import tkinter as tk
 
 from components.navigation.MessagePreview import MessagePreview
 
-class ImportantMessages:
+class ImportantMessages(tk.Frame):
 
     def __init__(self, master):
-        frm_important_messages = tk.Frame(master)
-        frm_important_messages.columnconfigure(0, weight=1)
-        frm_important_messages.rowconfigure(0, weight=0)
-        frm_important_messages.rowconfigure(1, weight=1)
+        super().__init__(master)
+        self.columnconfigure(0, weight=1)
+        self.rowconfigure(0, weight=0)
+        self.rowconfigure(1, weight=1)
 
-        self.important_messages_label = ImportantMessagesLabel(frm_important_messages, 3)
-        self.important_messages_to_display = ImportantMessagesToDisplay(frm_important_messages)
+        self.important_messages_label = ImportantMessagesLabel(self, 3)
+        self.important_messages_to_display = ImportantMessagesToDisplay(self)
 
-        frm_important_messages.grid(column=0, row=0, sticky="nsew")
+        self.grid(column=0, row=0, sticky="nsew")
 
 class ImportantMessagesLabel:
 
