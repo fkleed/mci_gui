@@ -21,7 +21,7 @@ class ImportantMessagesLabel(tk.Frame):
     def __init__(self, master, count):
         super().__init__(master)
 
-        self.important_messages_label_text = tk.Label(self, text="Imortant messages (" + str(count) + ")")
+        self.important_messages_label_text = tk.Label(self, text="Important messages (" + str(count) + ")")
         self.important_messages_label_text.configure(font=("Open Sans", 12, "bold"))
         self.important_messages_label_text.pack(side=tk.LEFT, padx=(10,10), pady=10)
 
